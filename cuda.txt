@@ -1,0 +1,26 @@
+cudaのインストール
+
+１，ダウンロード
+wget https://developer.nvidia.com/compute/cuda/8.0/prod/local_installers/cuda-repo-ubuntu1404-8-0-local_8.0.44-1_amd64-deb
+
+２，インストール
+sudo dpkg -i cuda-repo-ubuntu1404-8-0-local_8.0.44-1_amd64.deb
+sudo apt-get update
+sudo apt-get install cuda
+
+３，.bashrcに記述
+export CUDA_HOME=/usr/local/cuda-8.0
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${CUDA_HOME}/lib64
+export PATH=$PATH:${CUDA_HOME}/bin
+
+４，反映
+source .bashrc
+
+5,cudaが動くか確認
+cd /usr/local/cuda-8.0/samples
+sudo make
+サンプルを実行
+
+#cupyが入っているのに認識されない問題
+sudo pip install --pre cupy-cuda80

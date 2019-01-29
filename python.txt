@@ -1,0 +1,29 @@
+python環境設定（system編）
+
+sudo pip install 'requests[security]'
+
+１，pipをインストール
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py　
+python3と書いてあるところをpythonにする。ここがpipのインストール先になる？
+
+２，chainerのインストール
+sudo apt-get install python-numpy
+sudo apt-get install libhdf5-dev
+sudo pip install -U cython
+sudo pip install -U setuptools
+sudo apt-get install python-dev
+
+sudo pip install chainer==2.1.0
+
+３，chainerの確認
+sudo git clone https://github.com/pfnet/chainer.git
+cd　~/chainer/examples/mnist
+sudo python train_mnist.py
+sudo python train_mnist.py --gpu=0　//GPU使用する場合
+sudo python train_mnist.pyGPU: -1
+
+４、その他
+sudo apt-get install python-tk
+sudo pip install h5py
+

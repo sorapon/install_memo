@@ -1,0 +1,6 @@
+〜GPU使用まで〜
+
+１，nvidiaの公式サイトからドライバをダウンロード
+２，sudo chmod 755 ~/Downloads/NVIDIA-Linux-x86_64-384.98.run
+３，sudo ~/Downloads/NVIDIA-Linux-x86_64-384.98.run
+４，sudo reboot

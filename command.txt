@@ -1,0 +1,16 @@
+command
+
+find
+find /usr/local/ -name libcuda.so
+-> /usr/local/cuda-8.0/targets/x86_64-linux/lib/stubs/libcuda.so
+display the file path we designate
+
+
+指定フォルダ配下の再帰検索
+grep [検索したい文字列] -rl [検索対象フォルダのパス]
+
+
+screen shot
+PrintScreen         => all the screen
+shift + PrintScreen => a part of screen you want take
+alt + PrintScreen   => active browser

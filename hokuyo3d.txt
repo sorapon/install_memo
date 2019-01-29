@@ -1,0 +1,49 @@
+# how to use hokuyo3d lider
+https://github.com/open-rdc/orne_navigation/wiki/YVT-X002%E3%81%AE%E9%81%8B%E7%94%A8
+
+#installing package
+$ sudo apt-get install ros-indigo-hokuyo3d
+
+mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/src
+$ catkin_init_workspace
+$ catkin_create_pkg hokuyo3d_lider std_msgs roscpp rospy
+$ cd hokuyo3d_lider/launch
+
+mod01_hokuyo3d.launch
+<launch>
+    <node name="hokuyo3d" pkg="hokuyo3d" type="hokuyo3d" output="screen">
+        <rosparam param="ip">"192.168.0.10"</rosparam>
+        <rosparam param="output_cycle">"frame"</rosparam>
+        <rosparam param="frame_id">"hokuyo3d_link"</rosparam>
+        <rosparam param="interlace">"4"</rosparam>
+    </node>
+</launch>
+
+$ vi ~/.bashrc
+write below code in the bottom of file
+source ~/catkin_ws/devel/setup.bash
+
+# launching  hokuyo 3d_lider
+$ roslaunch hokuyo3d_lider mod01_hokuyo3d.launch
+
+# display topic in rviz
+$ rviz
+change fixed frame to hokuyo3d_link
+ADD => by topic => hokuyo_cloud2/PointCloud2
+
+# how to get bagfile of point_cloud
+$ rosbag record -o test_lider /hokuyo3d/hokuyo_cloud2
+if want finish, ctrl+c
+
+# display the information of file_name
+$ rosbag info file_name(bagfile)
+
+# publish the topic recorded by rosbag report
+$ roscore
+$ rvis
+
+$ rosbag play file_name
+OR
+$rqt_bag file_name
+push the right button and publish

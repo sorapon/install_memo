@@ -1,0 +1,19 @@
+git remote set-url origin https://github.com/sorapon/kinect_bringup.git #originのURL（リモートリポジトリ）を変更
+
+git remote add fork_origin https://github.com/Nishida-Lab/kinect_bringup.git　#扱うgitURL（リモートリポジトリ）を追加する
+
+git remote -v #リモートリポジトリを見る
+
+git fetch fork_origin #リモートリポジトリをローカルリポジトリに持ってくる
+
+git branch -a　#リモートのブランチも見ることができる
+
+
+
+
+git merge fork_origin/master #margeされるブランチに移動してから
+
+
+git push origin master　#originのmasterにpushする
+
+
